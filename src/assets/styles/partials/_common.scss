@@ -1,0 +1,13 @@
+.parent {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid pink;
+
+  
+  .child {
+    background-color: blue;
+  }
+}
