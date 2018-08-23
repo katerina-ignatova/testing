@@ -1,4 +1,8 @@
-// import img from './assets/images/cat.jpg';
-import "./assets/styles/main.scss";
+import 'babel-polyfill';
+import React from 'react';
+import { render } from 'react-dom';
 
-console.log("success!");
+import './assets/styles/main.scss';
+import App from './App';
+
+render(<App />, document.getElementById('app'));
