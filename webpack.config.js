@@ -6,9 +6,12 @@ const path = require('path');
 module.exports = (env, argv) => {
   const isDev = argv.mode === 'development';
   return {
-      output: {
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: "/",
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: "/",
+    },
+    devServer: {
+      historyApiFallback: true
     },
     resolve: {
       extensions: ['.js', '.jsx', '.scss']
@@ -35,28 +38,28 @@ module.exports = (env, argv) => {
         {
           test: /\.scss$/,
           use: [
-              MiniCssExtractPlugin.loader,
-              {
-                  loader: 'css-loader',
-                  options: {
-                      importLoaders: 2,
-                      sourceMap: true
-                  }
-              },
-              {
-                  loader: 'postcss-loader',
-                  options: {
-                      ident: 'postcss',
-                      plugins: () => [
-                          autoprefixer({
-                              browsers: ['> 0.1%']
-                          })
-                      ]
-                  }
-              },
-              {
-                  loader: 'sass-loader'
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                sourceMap: true
               }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: () => [
+                  autoprefixer({
+                    browsers: ['> 0.1%']
+                  })
+                ]
+              }
+            },
+            {
+              loader: 'sass-loader'
+            }
           ]
         }
       ]

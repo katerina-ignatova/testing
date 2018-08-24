@@ -1,8 +1,10 @@
+// React without Redux
+
 import React, { Component } from 'react';
 
-import cat from './assets/images/cat.jpg';
+import catImg from '../../assets/images/cat.jpg';
 
-class App extends Component {
+class Cat extends Component {
 
   state = {
     name: 'Mats'
@@ -40,7 +42,7 @@ class App extends Component {
     return (
       <div>
         <h1 onClick={this.miau}>This is the React test of {name}</h1>
-        <img src={cat} />
+        <img src={catImg} />
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
@@ -54,4 +56,4 @@ class App extends Component {
 
 };
 
-export default App;
+export default Cat;
